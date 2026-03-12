@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zhangfei Yang — CS Researcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    /* ══════════════════════════════════════════
+       THEME TOKENS
+    ══════════════════════════════════════════ */
+    :root,
+    [data-theme="light"] {
+      --bg:         #f5f3ee;
+      --surface:    #ffffff;
+      --border:     #ddd8cc;
+      --accent:     #2d5fd4;
+      --accent2:    #7c4dbd;
+      --gold:       #a0720f;
+      --text:       #2e2c28;
+      --muted:      #7a7468;
+      --heading:    #111009;
+      --grid-line:  #d6d1c7;
+      --toggle-bg:  #e4dfd6;
+      --shadow:     0 1px 4px rgba(0,0,0,0.07);
+      --serif:      'EB Garamond', Georgia, serif;
+      --mono:       'JetBrains Mono', monospace;
+    }
+
+    [data-theme="dark"] {
+      --bg:         #0d0f14;
+      --surface:    #13161d;
+      --border:     #1e2330;
+      --accent:     #5c8fff;
+      --accent2:    #a78bfa;
+      --gold:       #e2b96f;
+      --text:       #d4d8e8;
+      --muted:      #6b7394;
+      --heading:    #eef0fa;
+      --grid-line:  #1a1e2a;
+      --toggle-bg:  #1e2330;
+      --shadow:     0 1px 4px rgba(0,0,0,0.4);
+    }
+
+    /* ══════════════════════════════════════════
+       RESET & BASE
+    ══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+      min-height: 100vh;
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+
+    /* Grid lines overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.45;
+      pointer-events: none;
+      transition: background-image 0.35s;
+    }
+
+    /* ══════════════════════════════════════════
+       THEME TOGGLE
+    ══════════════════════════════════════════ */
+    .theme-toggle {
+      position: fixed;
+      top: 1.4rem;
+      right: 1.6rem;
+      z-index: 100;
+      background: var(--toggle-bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.38em 1em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      transition: background 0.35s, border-color 0.25s, color 0.25s;
+      box-shadow: var(--shadow);
+      user-select: none;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle .icon { font-size: 0.95rem; line-height: 1; transition: transform 0.4s ease; }
+    .theme-toggle:hover .icon { transform: rotate(22deg); }
+    .theme-toggle .label { text-transform: uppercase; }
+
+    /* ══════════════════════════════════════════
+       LAYOUT
+    ══════════════════════════════════════════ */
+    .wrapper {
+      position: relative; z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* ══════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════ */
+    header {
+      padding: 5rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3.5rem;
+    }
+
+    .header-meta {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.1s;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 500;
+      color: var(--heading);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.2s;
+    }
+
+    .tagline {
+      margin-top: 0.9rem;
+      font-size: 1.05rem;
+      color: var(--muted);
+      font-style: italic;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.35s;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.5s;
+    }
+
+    .header-links a {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: var(--accent2);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 0.45em 1.1em;
+      border-radius: 2px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow);
+    }
+    .header-links a:hover {
+      border-color: var(--accent2);
+      background: var(--accent2);
+      color: #fff;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      border: 1px solid rgba(160,114,15,0.3);
+      background: rgba(160,114,15,0.07);
+      padding: 0.3em 0.9em;
+      border-radius: 2px;
+    }
+    [data-theme="dark"] .status-badge {
+      border-color: rgba(226,185,111,0.3);
+      background: rgba(226,185,111,0.06);
+    }
+    .status-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    /* ══════════════════════════════════════════
+       SECTIONS
+    ══════════════════════════════════════════ */
+    section {
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+    section:nth-child(1) { animation-delay: 0.55s; }
+    section:nth-child(2) { animation-delay: 0.65s; }
+    section:nth-child(3) { animation-delay: 0.75s; }
+    section:nth-child(4) { animation-delay: 0.85s; }
+    section:nth-child(5) { animation-delay: 0.95s; }
+    section:nth-child(6) { animation-delay: 1.05s; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text);
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights { display: grid; gap: 1rem; }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+      transition: border-color 0.25s, transform 0.25s, background 0.35s;
+    }
+    .highlight-card:hover { border-color: var(--accent); transform: translateX(4px); }
+    .highlight-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .highlight-card h3 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 0.3rem;
+    }
+    .highlight-card p { font-size: 0.9rem; margin: 0; color: var(--muted); }
+
+    /* ── INTERESTS ── */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.8rem;
+    }
+    .interest-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.9rem 1.2rem;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text);
+      letter-spacing: 0.03em;
+      box-shadow: var(--shadow);
+      transition: all 0.2s, background 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .interest-item::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--accent2);
+    }
+    .interest-item:hover { border-color: var(--accent2); color: var(--heading); }
+
+    /* ── SKILLS ── */
+    .skills-group { margin-bottom: 1.8rem; }
+    .skills-group-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      padding: 0.3em 0.85em;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      letter-spacing: 0.05em;
+      box-shadow: var(--shadow);
+      transition: all 0.2s, background 0.35s;
+    }
+    .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── EXPERIENCE ── */
+    .exp-entry { padding: 1.4rem 0; border-bottom: 1px solid var(--border); }
+    .exp-entry:last-child { border-bottom: none; }
+    .exp-header {
+      display: flex; justify-content: space-between;
+      align-items: baseline; flex-wrap: wrap;
+      gap: 0.5rem; margin-bottom: 0.5rem;
+    }
+    .exp-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--heading); }
+    .exp-period { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; }
+    .exp-bullets { list-style: none; padding: 0; }
+    .exp-bullets li { font-size: 0.95rem; color: var(--text); padding: 0.2rem 0 0.2rem 1.2rem; position: relative; }
+    .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
+
+    /* ── EDUCATION ── */
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      box-shadow: var(--shadow);
+      transition: background 0.35s;
+    }
+    .edu-degree { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--heading); }
+    .edu-inst { font-size: 0.9rem; color: var(--accent2); margin-top: 0.2rem; }
+    .edu-period { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem; margin-top: 2rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-quote { font-style: italic; font-size: 0.9rem; color: var(--muted); }
+    .footer-meta { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--muted); opacity: 0.5; }
+
+    /* ── HEADER RESEARCH PILLS ── */
+    .header-interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.3rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.42s;
+    }
+    .header-interests-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      align-self: center;
+      margin-right: 0.2rem;
+    }
+    .ri-pill {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--accent2);
+      background: color-mix(in srgb, var(--accent2) 9%, var(--bg));
+      border: 1px solid color-mix(in srgb, var(--accent2) 30%, transparent);
+      padding: 0.22em 0.8em;
+      border-radius: 999px;
+      transition: all 0.2s;
+    }
+    .ri-pill:hover {
+      background: var(--accent2);
+      color: #fff;
+      border-color: var(--accent2);
+    }
+
+    /* ══════════════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.35; }
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .wrapper { padding: 0 1.2rem 4rem; }
+      header { padding: 3rem 0 2rem; }
+      .theme-toggle .label { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <span class="icon" id="themeIcon">☀️</span>
+  <span class="label" id="themeLabel">Light</span>
+</button>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-meta">Academic Profile · Computer Science</div>
+    <h1>Zhangfei Yang</h1>
+    <p class="tagline">M.S. Computer Science · The George Washington University</p>
+    <div class="header-interests">
+      <span class="header-interests-label">Research ·</span>
+      <span class="ri-pill">Video Streaming</span>
+      <span class="ri-pill">LLM Alignment</span>
+      <span class="ri-pill">Distributed Systems</span>
+      <span class="ri-pill">Machine Learning</span>
+    </div>
+    <div class="header-links">
+      <a href="https://www.linkedin.com/in/zhangfei-yang-0b2016381/" target="_blank" rel="noopener">↗ LinkedIn</a>
+      <a href="mailto:">✉ Contact</a>
+      <span class="status-badge">Open to PhD Opportunities</span>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="section-label">About</div>
+    <p class="about-text">
+      Master's student in Computer Science at GWU (2025–2027), with industry experience
+      spanning enterprise software engineering and video streaming systems. My work bridges
+      scalable system design, data engineering, and applied machine learning — transforming
+      raw data into actionable intelligence. I am actively pursuing <strong style="color:var(--heading)">Ph.D. opportunities</strong>
+      in ML, data systems, and applied AI.
+    </p>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section>
+    <div class="section-label">Highlights</div>
+    <div class="highlights">
+      <div class="highlight-card">
+        <div class="highlight-icon">🥇</div>
+        <div>
+          <h3>Kaggle Gold Medal</h3>
+          <p>Led a team to a Gold Prize predicting student performance using advanced feature engineering and ensemble models (LightGBM, CatBoost).</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🏭</div>
+        <div>
+          <h3>Enterprise Systems Engineering</h3>
+          <p>Industry experience building Manufacturing Execution Systems (MES) and Warehouse Management Systems (WMS) as a Java engineer.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">📊</div>
+        <div>
+          <h3>Logistics Data Platforms</h3>
+          <p>Engineered end-to-end data pipelines with Tableau dashboards supporting enterprise decision-making at scale.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">🏥</div>
+        <div>
+          <h3>Health &amp; Epidemic Systems</h3>
+          <p>Developed health analysis and epidemic prevention management applications with full software lifecycle ownership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH INTERESTS -->
+  <section>
+    <div class="section-label">Research Interests</div>
+    <div class="interests-grid">
+      <div class="interest-item">Distributed Systems</div>
+      <div class="interest-item">Software Engineering</div>
+      <div class="interest-item">Video Streaming Systems</div>
+      <div class="interest-item">Communication Networks</div>
+      <div class="interest-item">Machine Learning</div>
+      <div class="interest-item">Large Language Models</div>
+      <div class="interest-item">Data Systems</div>
+      <div class="interest-item">Applied AI</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-label">Technical Skills</div>
+    <div class="skills-group">
+      <div class="skills-group-label">Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">JavaScript</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="skills-group-label">Systems &amp; Streaming</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Video Streaming</span>
+        <span class="skill-tag">FFmpeg</span>
+        <span class="skill-tag">MES / WMS</span>
+        <span class="skill-tag">System Design</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="skills-group-label">Machine Learning &amp; Data</div>
+      <div class="skill-tags">
+        <span class="skill-tag">LightGBM</span>
+        <span class="skill-tag">CatBoost</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Feature Engineering</span>
+        <span class="skill-tag">Ensemble Methods</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <div class="skills-group-label">Core Competencies</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Full-Stack Development</span>
+        <span class="skill-tag">Data Pipelines</span>
+        <span class="skill-tag">Analytical Problem Solving</span>
+        <span class="skill-tag">Project Management</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-label">Professional Experience</div>
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-title">Java Development Engineer</span>
+        <span class="exp-period">Industry</span>
+      </div>
+      <ul class="exp-bullets">
+        <li>Contributed to enterprise Manufacturing Execution Systems (MES) and Warehouse Management Systems (WMS)</li>
+        <li>Optimized database performance and developed core business logic modules</li>
+      </ul>
+    </div>
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-title">System Software Engineer</span>
+        <span class="exp-period">Industry</span>
+      </div>
+      <ul class="exp-bullets">
+        <li>Engineered logistics data platforms with robust end-to-end data pipelines</li>
+        <li>Applied Tableau for data visualization to support strategic enterprise decision-making</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-label">Education</div>
+    <div class="edu-card">
+      <div>
+        <div class="edu-degree">M.S. Computer Science</div>
+        <div class="edu-inst">The George Washington University</div>
+      </div>
+      <div class="edu-period">2025 – 2027</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-quote">"Turning data into decisions, and code into impact."</span>
+    <span class="footer-meta">Arlington, Virginia · GWU CS</span>
+  </footer>
+
+</div>
+
+<script>
+  const html  = document.documentElement;
+  const btn   = document.getElementById('themeToggle');
+  const icon  = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
+
+  // Load saved preference — default is light
+  const saved = localStorage.getItem('theme') || 'light';
+  applyTheme(saved);
+
+  btn.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (theme === 'dark') {
+      icon.textContent  = '🌙';
+      label.textContent = 'Dark';
+    } else {
+      icon.textContent  = '☀️';
+      label.textContent = 'Light';
+    }
+  }
+</script>
+</body>
+</html>
