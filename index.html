@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zhangfei Yang — CS Researcher</title>
+  <title>Zhangfei Yang — AI & LLM Researcher</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     /* ══════════════════════════════════════════
@@ -217,7 +217,6 @@
     section:nth-child(3) { animation-delay: 0.75s; }
     section:nth-child(4) { animation-delay: 0.85s; }
     section:nth-child(5) { animation-delay: 0.95s; }
-    section:nth-child(6) { animation-delay: 1.05s; }
 
     .section-label {
       font-family: var(--mono);
@@ -245,7 +244,7 @@
       padding-left: 1.5rem;
     }
 
-    /* ── HIGHLIGHTS ── */
+    /* ── HIGHLIGHTS / RESEARCH ── */
     .highlights { display: grid; gap: 1rem; }
 
     .highlight-card {
@@ -322,20 +321,6 @@
       transition: all 0.2s, background 0.35s;
     }
     .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* ── EXPERIENCE ── */
-    .exp-entry { padding: 1.4rem 0; border-bottom: 1px solid var(--border); }
-    .exp-entry:last-child { border-bottom: none; }
-    .exp-header {
-      display: flex; justify-content: space-between;
-      align-items: baseline; flex-wrap: wrap;
-      gap: 0.5rem; margin-bottom: 0.5rem;
-    }
-    .exp-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--heading); }
-    .exp-period { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; }
-    .exp-bullets { list-style: none; padding: 0; }
-    .exp-bullets li { font-size: 0.95rem; color: var(--text); padding: 0.2rem 0 0.2rem 1.2rem; position: relative; }
-    .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
 
     /* ── EDUCATION ── */
     .edu-card {
@@ -422,7 +407,6 @@
 </head>
 <body>
 
-<!-- THEME TOGGLE -->
 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
   <span class="icon" id="themeIcon">☀️</span>
   <span class="label" id="themeLabel">Light</span>
@@ -430,169 +414,114 @@
 
 <div class="wrapper">
 
-  <!-- HEADER -->
   <header>
     <div class="header-meta">Academic Profile · Computer Science</div>
     <h1>Zhangfei Yang</h1>
     <p class="tagline">M.S. Computer Science · The George Washington University</p>
     <div class="header-interests">
       <span class="header-interests-label">Research ·</span>
-      <span class="ri-pill">Video Streaming</span>
       <span class="ri-pill">LLM Alignment</span>
-      <span class="ri-pill">Distributed Systems</span>
-      <span class="ri-pill">Machine Learning</span>
+      <span class="ri-pill">Trustworthy AI</span>
+      <span class="ri-pill">Model Evaluation</span>
+      <span class="ri-pill">NLP</span>
     </div>
     <div class="header-links">
       <a href="https://www.linkedin.com/in/zhangfei-yang-0b2016381/" target="_blank" rel="noopener">↗ LinkedIn</a>
-      <a href="mailto:">✉ Contact</a>
-      <span class="status-badge">Open to PhD Opportunities</span>
+      <a href="mailto:yzf5140@gmail.com">✉ Contact</a>
+      <span class="status-badge">Open to PhD Opportunities (Fall 2027)</span>
     </div>
   </header>
 
-  <!-- ABOUT -->
   <section>
     <div class="section-label">About</div>
     <p class="about-text">
-      Master's student in Computer Science at GWU (2025–2027), with industry experience
-      spanning enterprise software engineering and video streaming systems. My work bridges
-      scalable system design, data engineering, and applied machine learning — transforming
-      raw data into actionable intelligence. I am actively pursuing <strong style="color:var(--heading)">Ph.D. opportunities</strong>
-      in ML, data systems, and applied AI.
+      Master's student in Computer Science at GWU with a 4.0 GPA. My academic research focuses on <strong style="color:var(--heading)">Large Language Models (LLMs)</strong>, with a strong emphasis on LLM alignment, trustworthy AI, and model evaluation. My recent work investigates reliability failure modes, such as persona-induced information asymmetry, to understand the trade-offs between sycophancy and factual integrity. I am actively seeking <strong style="color:var(--heading)">Ph.D. opportunities</strong> to further advance research in AI safety and information equity.
     </p>
   </section>
 
-  <!-- HIGHLIGHTS -->
   <section>
-    <div class="section-label">Highlights</div>
+    <div class="section-label">Research & Publications</div>
     <div class="highlights">
       <div class="highlight-card">
-        <div class="highlight-icon">🥇</div>
+        <div class="highlight-icon">🧠</div>
         <div>
-          <h3>Kaggle Gold Medal</h3>
-          <p>Led a team to a Gold Prize predicting student performance using advanced feature engineering and ensemble models (LightGBM, CatBoost).</p>
+          <h3>Persona-Induced Information Asymmetry in LLMs</h3>
+          <p><strong>Lead Researcher</strong> · Formulated a novel reliability failure mode in frontier models. Developed an evaluation benchmark of 1,800+ ground-truth checklists and proposed quantitative metrics (FC, IOS, PTG) to analyze the "Sycophancy-Completeness Trade-off."</p>
         </div>
       </div>
       <div class="highlight-card">
-        <div class="highlight-icon">🏭</div>
+        <div class="highlight-icon">⚙️</div>
         <div>
-          <h3>Enterprise Systems Engineering</h3>
-          <p>Industry experience building Manufacturing Execution Systems (MES) and Warehouse Management Systems (WMS) as a Java engineer.</p>
+          <h3>Federated Internal Coherence Maximization (F-ICM)</h3>
+          <p><strong>Research Project</strong> · Architected a federated learning framework implementing Parameter-Efficient Fine-Tuning (PEFT) strategies to maximize internal model coherence for LLM alignment in decentralized, resource-constrained environments.</p>
         </div>
       </div>
       <div class="highlight-card">
-        <div class="highlight-icon">📊</div>
+        <div class="highlight-icon">📄</div>
         <div>
-          <h3>Logistics Data Platforms</h3>
-          <p>Engineered end-to-end data pipelines with Tableau dashboards supporting enterprise decision-making at scale.</p>
-        </div>
-      </div>
-      <div class="highlight-card">
-        <div class="highlight-icon">🏥</div>
-        <div>
-          <h3>Health &amp; Epidemic Systems</h3>
-          <p>Developed health analysis and epidemic prevention management applications with full software lifecycle ownership.</p>
+          <h3>OrbitStream (Under Review at ICCCN)</h3>
+          <p><strong>Co-Author</strong> · Developed a training-free adaptive 360-degree video streaming framework utilizing semantic potential fields for zero-shot adaptation. Conducted 3,600+ large-scale simulations demonstrating competitive QoE and low latency.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RESEARCH INTERESTS -->
   <section>
     <div class="section-label">Research Interests</div>
     <div class="interests-grid">
-      <div class="interest-item">Distributed Systems</div>
-      <div class="interest-item">Software Engineering</div>
-      <div class="interest-item">Video Streaming Systems</div>
-      <div class="interest-item">Communication Networks</div>
-      <div class="interest-item">Machine Learning</div>
-      <div class="interest-item">Large Language Models</div>
-      <div class="interest-item">Data Systems</div>
-      <div class="interest-item">Applied AI</div>
+      <div class="interest-item">Large Language Models (LLMs)</div>
+      <div class="interest-item">LLM Alignment & RLHF</div>
+      <div class="interest-item">Trustworthy & Safe AI</div>
+      <div class="interest-item">Model Evaluation & Behavior</div>
+      <div class="interest-item">Natural Language Processing</div>
+      <div class="interest-item">Information Equity</div>
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section>
-    <div class="section-label">Technical Skills</div>
+    <div class="section-label">Technical & Research Skills</div>
     <div class="skills-group">
-      <div class="skills-group-label">Languages</div>
+      <div class="skills-group-label">LLM Tools & Frameworks</div>
       <div class="skill-tags">
-        <span class="skill-tag">Java</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">Hugging Face (Transformers, PEFT)</span>
+        <span class="skill-tag">vLLM</span>
         <span class="skill-tag">Python</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">JavaScript</span>
       </div>
     </div>
     <div class="skills-group">
-      <div class="skills-group-label">Systems &amp; Streaming</div>
+      <div class="skills-group-label">Evaluation & Methodology</div>
       <div class="skill-tags">
-        <span class="skill-tag">Video Streaming</span>
-        <span class="skill-tag">FFmpeg</span>
-        <span class="skill-tag">MES / WMS</span>
-        <span class="skill-tag">System Design</span>
+        <span class="skill-tag">Automated Fact Annotation</span>
+        <span class="skill-tag">Human-in-the-loop Validation</span>
+        <span class="skill-tag">Statistical Analysis</span>
+        <span class="skill-tag">Prompt Engineering</span>
       </div>
     </div>
     <div class="skills-group">
-      <div class="skills-group-label">Machine Learning &amp; Data</div>
+      <div class="skills-group-label">Domain Knowledge</div>
       <div class="skill-tags">
-        <span class="skill-tag">LightGBM</span>
-        <span class="skill-tag">CatBoost</span>
-        <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Feature Engineering</span>
-        <span class="skill-tag">Ensemble Methods</span>
-      </div>
-    </div>
-    <div class="skills-group">
-      <div class="skills-group-label">Core Competencies</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Full-Stack Development</span>
-        <span class="skill-tag">Data Pipelines</span>
-        <span class="skill-tag">Analytical Problem Solving</span>
-        <span class="skill-tag">Project Management</span>
+        <span class="skill-tag">AI Safety</span>
+        <span class="skill-tag">RLHF Alignment</span>
+        <span class="skill-tag">Model Sycophancy</span>
+        <span class="skill-tag">Federated Learning</span>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section>
-    <div class="section-label">Professional Experience</div>
-    <div class="exp-entry">
-      <div class="exp-header">
-        <span class="exp-title">Java Development Engineer</span>
-        <span class="exp-period">Industry</span>
-      </div>
-      <ul class="exp-bullets">
-        <li>Contributed to enterprise Manufacturing Execution Systems (MES) and Warehouse Management Systems (WMS)</li>
-        <li>Optimized database performance and developed core business logic modules</li>
-      </ul>
-    </div>
-    <div class="exp-entry">
-      <div class="exp-header">
-        <span class="exp-title">System Software Engineer</span>
-        <span class="exp-period">Industry</span>
-      </div>
-      <ul class="exp-bullets">
-        <li>Engineered logistics data platforms with robust end-to-end data pipelines</li>
-        <li>Applied Tableau for data visualization to support strategic enterprise decision-making</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
   <section>
     <div class="section-label">Education</div>
     <div class="edu-card">
       <div>
         <div class="edu-degree">M.S. Computer Science</div>
-        <div class="edu-inst">The George Washington University</div>
+        <div class="edu-inst">The George Washington University · GPA 4.0/4.0</div>
       </div>
-      <div class="edu-period">2025 – 2027</div>
+      <div class="edu-period">Sep 2025 – Expected May 2027</div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <span class="footer-quote">"Turning data into decisions, and code into impact."</span>
+    <span class="footer-quote">"Advancing alignment, evaluation, and trustworthy intelligence in AI."</span>
     <span class="footer-meta">Arlington, Virginia · GWU CS</span>
   </footer>
 
