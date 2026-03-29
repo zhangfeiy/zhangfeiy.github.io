@@ -266,7 +266,28 @@
       font-weight: 600;
       color: var(--heading);
       margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+    
+    .paper-link {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.15em 0.5em;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-weight: 400;
+    }
+    .paper-link:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
     .highlight-card p { font-size: 0.9rem; margin: 0; color: var(--muted); }
 
     /* ── INTERESTS ── */
@@ -323,6 +344,7 @@
     .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ── EDUCATION ── */
+    .edu-container { display: flex; flex-direction: column; gap: 1rem; }
     .edu-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -338,7 +360,7 @@
     }
     .edu-degree { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--heading); }
     .edu-inst { font-size: 0.9rem; color: var(--accent2); margin-top: 0.2rem; }
-    .edu-period { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; }
+    .edu-period { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; text-align: right; }
 
     /* ── FOOTER ── */
     footer {
@@ -402,6 +424,7 @@
       .wrapper { padding: 0 1.2rem 4rem; }
       header { padding: 3rem 0 2rem; }
       .theme-toggle .label { display: none; }
+      .edu-period { text-align: left; }
     }
   </style>
 </head>
@@ -435,7 +458,7 @@
   <section>
     <div class="section-label">About</div>
     <p class="about-text">
-      Master's student in Computer Science at GWU with a 4.0 GPA. My academic research focuses on <strong style="color:var(--heading)">Large Language Models (LLMs)</strong>, with a strong emphasis on LLM alignment, trustworthy AI, and model evaluation. My recent work investigates reliability failure modes, such as persona-induced information asymmetry, to understand the trade-offs between sycophancy and factual integrity. I am actively seeking <strong style="color:var(--heading)">Ph.D. opportunities</strong> to further advance research in AI safety and information equity.
+      I am a Master's student in Computer Science at The George Washington University (GPA: 4.0). My academic research focuses on <strong style="color:var(--heading)">Large Language Models (LLMs)</strong>, with a strong emphasis on model alignment, trustworthy AI, and behavioral evaluation. My recent work investigates reliability failure modes, such as persona-induced information asymmetry, to better understand the trade-offs between sycophancy and factual integrity. I am actively seeking <strong style="color:var(--heading)">Ph.D. opportunities for Fall 2027</strong> to further advance research in AI safety and information equity.
     </p>
   </section>
 
@@ -459,7 +482,7 @@
       <div class="highlight-card">
         <div class="highlight-icon">📄</div>
         <div>
-          <h3>OrbitStream (Under Review at ICCCN)</h3>
+          <h3>OrbitStream (Under Review at ICCCN) <a href="https://arxiv.org/abs/2603.20999" target="_blank" rel="noopener" class="paper-link">arXiv ↗</a></h3>
           <p><strong>Co-Author</strong> · Developed a training-free adaptive 360-degree video streaming framework utilizing semantic potential fields for zero-shot adaptation. Conducted 3,600+ large-scale simulations demonstrating competitive QoE and low latency.</p>
         </div>
       </div>
@@ -511,12 +534,21 @@
 
   <section>
     <div class="section-label">Education</div>
-    <div class="edu-card">
-      <div>
-        <div class="edu-degree">M.S. Computer Science</div>
-        <div class="edu-inst">The George Washington University · GPA 4.0/4.0</div>
+    <div class="edu-container">
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">M.S. in Computer Science</div>
+          <div class="edu-inst">The George Washington University</div>
+        </div>
+        <div class="edu-period">Sep 2025 – Expected May 2027</div>
       </div>
-      <div class="edu-period">Sep 2025 – Expected May 2027</div>
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">Bachelor's Degree</div>
+          <div class="edu-inst">Zhongnan University of Economics and Law</div>
+        </div>
+        <div class="edu-period">Graduated</div>
+      </div>
     </div>
   </section>
 
