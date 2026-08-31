@@ -204,4 +204,67 @@ Email: [yzf5140@gmail.com](mailto:yzf5140@gmail.com)
     margin-left: 0.35rem;
   }
 }
+
+/* =========================
+   Research Experience
+   Professional Service
+   Education
+   ========================= */
+
+#research-experience + p,
+#research-experience ~ p {
+  margin-left: 1rem;
+}
+
+#professional-service + ul {
+  margin-left: 1rem;
+  padding-left: 1.15rem;
+}
+
+#education + p,
+#education ~ p {
+  margin-left: 1rem;
+}
+
+/* Experience / Education 主信息 */
+#research-experience + p strong,
+#education + p strong {
+  color: var(--global-text-color);
+  font-weight: 600;
+}
+
+/* 日期 */
+#research-experience + p em {
+  color: var(--global-text-color);
+  opacity: 0.82;
+}
+
+/* Experience 描述 */
+#research-experience ~ p {
+  color: var(--global-text-color);
+}
+
+/* Professional Service */
+#professional-service + ul li {
+  margin-bottom: 0.45rem;
+  line-height: 1.55;
+}
+
+/* Section spacing */
+#research-experience,
+#professional-service,
+#education {
+  margin-top: 2.5rem;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  #research-experience + p,
+  #research-experience ~ p,
+  #professional-service + ul,
+  #education + p,
+  #education ~ p {
+    margin-left: 0.35rem;
+  }
+}
 </style>
