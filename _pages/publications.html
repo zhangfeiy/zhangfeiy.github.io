@@ -6,31 +6,181 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+<p class="pub-scholar">
+  You can also find my work on
+  <a href="{{ site.author.googlescholar }}" target="_blank">
+    Google Scholar
+  </a>.
+</p>
 {% endif %}
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
+<style>
+.pub-scholar {
+  margin-bottom: 2.2rem;
+}
+
+.publication-section {
+  margin-top: 2.5rem;
+}
+
+.publication-section h2 {
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.publication-entry {
+  margin: 0;
+  padding: 1.15rem 0 1.25rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.publication-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.05em;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.publication-title a {
+  text-decoration: none;
+}
+
+.publication-title a:hover {
+  text-decoration: underline;
+}
+
+.publication-meta {
+  margin: 0.2rem 0 0.45rem;
+  font-size: 0.93em;
+  line-height: 1.55;
+}
+
+.publication-meta p {
+  margin: 0.15rem 0;
+}
+
+.publication-venue {
+  margin-top: 0.3rem;
+  color: #555;
+  font-style: italic;
+}
+
+.publication-links {
+  margin-top: 0.35rem;
+  font-size: 0.9em;
+}
+
+.publication-links a {
+  margin-right: 0.65rem;
+}
+</style>
+
+
 {% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+
+  {% for category in site.publication_category %}
+
+    {% assign category_posts = site.publications
+      | where: "category", category[0]
+      | sort: "date"
+      | reverse
+    %}
+
+    {% if category_posts.size > 0 %}
+
+      <section class="publication-section">
+
+        <h2>{{ category[1].title }}</h2>
+
+        {% for post in category_posts %}
+
+          <article class="publication-entry">
+
+            <div class="publication-title">
+
+              {% if post.paperurl and post.paperurl != "" %}
+
+                <a
+                  href="{{ post.paperurl }}"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {{ post.title }}
+                </a>
+
+              {% else %}
+
+                <a href="{{ post.url | relative_url }}">
+                  {{ post.title }}
+                </a>
+
+              {% endif %}
+
+            </div>
+
+            <div class="publication-meta">
+
+              {{ post.content }}
+
+            </div>
+
+          </article>
+
+        {% endfor %}
+
+      </section>
+
+    {% endif %}
+
   {% endfor %}
+
+
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+
+  <section class="publication-section">
+
+    {% assign all_publications = site.publications
+      | sort: "date"
+      | reverse
+    %}
+
+    {% for post in all_publications %}
+
+      <article class="publication-entry">
+
+        <div class="publication-title">
+
+          {% if post.paperurl and post.paperurl != "" %}
+
+            <a
+              href="{{ post.paperurl }}"
+              target="_blank"
+              rel="noopener"
+            >
+              {{ post.title }}
+            </a>
+
+          {% else %}
+
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title }}
+            </a>
+
+          {% endif %}
+
+        </div>
+
+        <div class="publication-meta">
+          {{ post.content }}
+        </div>
+
+      </article>
+
+    {% endfor %}
+
+  </section>
+
 {% endif %}
-
-
-
