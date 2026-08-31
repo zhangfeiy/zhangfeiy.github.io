@@ -100,30 +100,35 @@ Email: [yzf5140@gmail.com](mailto:yzf5140@gmail.com)
   font-weight: 500;
 }
 
-.selected-pub {
-  margin: 1.15rem 0 1.45rem;
-}
-
 .selected-pub-title {
   font-weight: 600;
   line-height: 1.45;
   margin-bottom: 0.18rem;
+  color: var(--global-text-color);
 }
 
 .selected-pub-authors {
   font-size: 0.92em;
   line-height: 1.5;
+  color: var(--global-text-color);
 }
 
 .selected-pub-venue {
   margin-top: 0.08rem;
   font-size: 0.9em;
   font-style: italic;
-  color: var(--global-text-color-light);
+
+  /* 不要再用 global-text-color-light */
+  color: var(--global-text-color);
+  opacity: 0.78;
 }
 
 .selected-pub-links {
-  margin-top: 0.18rem;
+  margin-top: 0.22rem;
   font-size: 0.86em;
+}
+
+.selected-pub-links a {
+  font-weight: 500;
 }
 </style>
