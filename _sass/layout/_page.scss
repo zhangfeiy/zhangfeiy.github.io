@@ -5,38 +5,22 @@
 #main {
   @include container;
   @include clearfix;
-
-  margin-top: 2.4rem;
-
-  padding-left: 1rem;
-  padding-right: 1rem;
-
-  animation: intro 0.25s both;
-  animation-delay: 0.12s;
+  margin-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  animation: intro 0.3s both;
+  animation-delay: 0.35s;
 
   @include breakpoint($x-large) {
     max-width: $x-large;
   }
 }
 
-
-/*
-   Main page column
-   ========================================================================== */
-
 .page {
   @include breakpoint($large) {
-    /*
-     * Keep the sidebar on the left, but let the main text use
-     * substantially more of the available horizontal space.
-     */
     @include span(10 of 12 last);
-
-    /* smaller gap between sidebar and content */
-    @include prefix(0.2 of 12);
-
-    /* remove the large unused right margin */
-    @include suffix(0.7 of 12);
+    @include prefix(0.5 of 12);
+    @include suffix(2 of 12);
   }
 
   .page__inner-wrap {
@@ -50,79 +34,36 @@
   }
 }
 
-
-/*
-   Page title
-   ========================================================================== */
-
 .page__title {
   margin-top: 0;
-  margin-bottom: 0.6rem;
-
-  line-height: 1.2;
-
-  font-size: 1.85rem;
-  font-weight: 600;
-
-  letter-spacing: -0.025em;
+  line-height: 1;
 
   & + .page__meta {
-    margin-top: -0.3em;
+    margin-top: -0.5em;
   }
 }
-
 
 .page__lead {
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: 1.15rem;
-  line-height: 1.65;
+  font-family: $global-font-family;
+  font-size: $type-size-4;
 }
 
-
-/*
-   Main page content
-   ========================================================================== */
-
 .page__content {
-  max-width: 100%;
 
   h2 {
-    margin-top: 2.4rem;
-    margin-bottom: 1rem;
-
-    padding-bottom: 0.45rem;
-
+    padding-bottom: 0.5em;
     border-bottom: 1px solid var(--global-border-color);
-
-    font-size: 1.35rem;
-    font-weight: 600;
-
-    letter-spacing: -0.02em;
   }
 
-  h3 {
-    margin-top: 1.9rem;
-    margin-bottom: 0.7rem;
-
-    font-size: 1.08rem;
-    font-weight: 600;
+  p, li, dl {
+    font-size: 1em;
   }
 
-  p,
-  li,
-  dl {
-    font-size: 0.96rem;
-  }
-
+  /* paragraph indents */
   p {
-    margin: 0 0 1.2rem;
+    margin: 0 0 $indent-var;
 
+    /* sibling indentation*/
     @if $paragraph-indent == true {
       & + p {
         text-indent: $indent-var;
@@ -131,102 +72,58 @@
     }
   }
 
-  ul,
-  ol {
-    margin-top: 0.8rem;
-    margin-bottom: 1.3rem;
-  }
-
-  li {
-    margin-bottom: 0.38rem;
-    line-height: 1.65;
-  }
-
   a {
     text-decoration: underline;
-
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
 
     &:hover {
       text-decoration: underline;
 
       img {
-        box-shadow: none;
+        box-shadow: 0 0 10px rgba(#000, 0.25);
       }
     }
   }
 
   dt {
     margin-top: 1em;
-
-    font-family:
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      sans-serif;
-
-    font-weight: 600;
+    font-family: $sans-serif;
+    font-weight: bold;
   }
 
   dd {
     margin-left: 1em;
-
-    font-family:
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      sans-serif;
-
-    font-size: 0.85rem;
+    font-family: $sans-serif;
+    font-size: $type-size-6;
   }
 
   .small {
-    font-size: 0.82rem;
+    font-size: $type-size-6;
   }
 
-  blockquote {
-    margin-top: 1.5rem;
-    margin-bottom: 1.8rem;
-  }
-
+  /* blockquote citations */
   blockquote + .small {
-    margin-top: -1.2em;
+    margin-top: -1.5em;
     padding-left: 1.25rem;
   }
 }
 
-
-/*
-   Hero
-   ========================================================================== */
-
 .page__hero {
   position: relative;
-
   margin-bottom: 2em;
-
   @include clearfix;
-
-  animation: intro 0.25s both;
-  animation-delay: 0.1s;
+  animation: intro 0.3s both;
+  animation-delay: 0.25s;
 
   &--overlay {
     position: relative;
-
     margin-bottom: 2em;
     padding: 3em 0;
-
     @include clearfix;
-
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
-    animation: intro 0.25s both;
-    animation-delay: 0.1s;
+    animation: intro 0.3s both;
+    animation-delay: 0.25s;
 
     a {
       color: #fff;
@@ -263,37 +160,25 @@
   }
 }
 
-
 .page__hero-image {
   width: 100%;
   height: auto;
-
   -ms-interpolation-mode: bicubic;
 }
 
-
 .page__hero-caption {
   position: absolute;
-
-  right: 0;
   bottom: 0;
-
+  right: 0;
   margin: 0 auto;
   padding: 2px 5px;
-
   color: #fff;
-
   font-family: $caption-font-family;
   font-size: $type-size-7;
-
   background: #000;
-
   text-align: right;
-
   z-index: 5;
-
   opacity: 0.5;
-
   border-radius: $border-radius 0 $border-radius 0;
 
   @include breakpoint($large) {
@@ -306,7 +191,6 @@
   }
 }
 
-
 /*
    Social sharing
    ========================================================================== */
@@ -314,33 +198,25 @@
 .page__share {
   margin-top: 2em;
   padding-top: 1em;
-
   border-top: 1px solid var(--global-border-color);
 
   @include breakpoint(max-width $small) {
     .btn span {
       border: 0;
       clip: rect(0 0 0 0);
-
       height: 1px;
-      width: 1px;
-
       margin: -1px;
-      padding: 0;
-
       overflow: hidden;
-
+      padding: 0;
       position: absolute;
+      width: 1px;
     }
   }
 }
 
-
 .page__share-title {
   margin-bottom: 10px;
-
   font-size: $type-size-6;
-
   text-transform: uppercase;
 }
 
@@ -351,17 +227,9 @@
 
 .page__meta {
   margin-top: 2em;
-
   color: var(--global-text-color-light);
-
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: 0.8rem;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
 
   p {
     margin: 0;
@@ -372,12 +240,9 @@
   }
 }
 
-
 .page__meta-title {
   margin-bottom: 10px;
-
-  font-size: 0.8rem;
-
+  font-size: $type-size-6;
   text-transform: uppercase;
 }
 
@@ -396,23 +261,17 @@
   }
 }
 
-
 .page__taxonomy-item {
   display: inline-block;
-
   margin-right: 5px;
   margin-bottom: 8px;
-
   padding: 5px 10px;
-
   text-decoration: none;
-
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
 
   &:hover {
     text-decoration: none;
-
     color: var(--global-link-color-hover);
   }
 }
@@ -426,26 +285,18 @@
   @include full();
 }
 
-
 .page__comments-title {
   margin-top: 2rem;
   margin-bottom: 10px;
-
   padding-top: 2rem;
-
   font-size: $type-size-6;
-
   border-top: 1px solid var(--global-border-color);
-
   text-transform: uppercase;
 }
 
-
 .page__comments-form {
   padding: 1em;
-
   background: var(--global-border-color);
-
   transition: $global-transition;
 
   &.disabled {
@@ -454,22 +305,16 @@
     textarea,
     label {
       pointer-events: none;
-
       cursor: not-allowed;
-
       filter: alpha(opacity=65);
-
       box-shadow: none;
-
       opacity: 0.65;
     }
   }
 }
 
-
 .comment {
   @include clearfix();
-
   margin: 1em 0;
 
   &:not(:last-child) {
@@ -477,10 +322,8 @@
   }
 }
 
-
 .comment__avatar-wrapper {
   float: left;
-
   width: 60px;
   height: 60px;
 
@@ -490,34 +333,27 @@
   }
 }
 
-
 .comment__avatar {
   width: 40px;
   height: 40px;
-
   border-radius: 50%;
 
   @include breakpoint($large) {
     width: 80px;
     height: 80px;
-
     padding: 5px;
-
     border: 1px solid var(--global-border-color);
   }
 }
 
-
 .comment__content-wrapper {
   float: right;
-
   width: calc(100% - 60px);
 
   @include breakpoint($large) {
     width: calc(100% - 100px);
   }
 }
-
 
 .comment__author {
   margin: 0;
@@ -527,10 +363,8 @@
   }
 }
 
-
 .comment__date {
   @extend .page__meta;
-
   margin: 0;
 
   a {
@@ -544,17 +378,14 @@
    ========================================================================== */
 
 .page__related {
-  @include clearfix;
-
-  float: left;
-
   margin-top: 2em;
   padding-top: 1em;
-
   border-top: 1px solid var(--global-border-color);
+  @include clearfix();
+  float: left;
 
   @include breakpoint($large) {
-    @include pre(2.2 of 12);
+    @include pre(2.5 of 12);
   }
 
   a {
@@ -563,11 +394,8 @@
   }
 }
 
-
 .page__related-title {
   margin-bottom: 10px;
-
   font-size: $type-size-6;
-
   text-transform: uppercase;
 }
