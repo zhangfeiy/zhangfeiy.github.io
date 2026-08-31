@@ -100,8 +100,12 @@ Email: [yzf5140@gmail.com](mailto:yzf5140@gmail.com)
   font-weight: 500;
 }
 
+/* =========================
+   Selected Publications
+   ========================= */
+
 .selected-pub {
-  margin: 1.35rem 0 1.6rem;
+  margin: 1.35rem 0 1.6rem 1rem;
 }
 
 .selected-pub-title {
@@ -129,5 +133,75 @@ Email: [yzf5140@gmail.com](mailto:yzf5140@gmail.com)
 .selected-pub-links {
   margin-top: 0.28rem;
   font-size: 0.88em;
+}
+
+.selected-pub-links a {
+  font-weight: 500;
+}
+
+
+/* =========================
+   Research Experience
+   Professional Service
+   Education
+   Contact
+   ========================= */
+
+/*
+   给首页这些 section 下方的正文统一缩进。
+   标题仍保持左对齐。
+*/
+
+.page__content h2 + p,
+.page__content h2 + ul,
+.page__content h2 + dl {
+  margin-left: 1rem;
+}
+
+/*
+   Research Experience:
+   标题后通常是：
+   <p><strong>Research Assistant...</strong><br>...</p>
+   再跟一个描述 paragraph
+*/
+
+.page__content h2#research-experience ~ p {
+  margin-left: 1rem;
+}
+
+/* Professional Service */
+.page__content h2#professional-service + ul {
+  margin-left: 1rem;
+  padding-left: 1.2rem;
+}
+
+/* Education */
+.page__content h2#education ~ p {
+  margin-left: 1rem;
+}
+
+/* Contact */
+.page__content h2#contact ~ p {
+  margin-left: 1rem;
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media screen and (max-width: 768px) {
+  .selected-pub {
+    margin-left: 0.35rem;
+  }
+
+  .page__content h2 + p,
+  .page__content h2 + ul,
+  .page__content h2 + dl,
+  .page__content h2#research-experience ~ p,
+  .page__content h2#education ~ p,
+  .page__content h2#contact ~ p {
+    margin-left: 0.35rem;
+  }
 }
 </style>
