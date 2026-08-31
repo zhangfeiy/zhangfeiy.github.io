@@ -7,8 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my homepage!
-
 I am an M.S. student in Computer Science at **The George Washington University**. My research focuses on **trustworthy artificial intelligence**, with particular interests in **large language model alignment, model behavior and evaluation, and reliable knowledge elicitation**.
 
 I am broadly interested in understanding how language models adapt their behavior across different users, objectives, and deployment settings, and in developing methods that make these systems more reliable, interpretable, and aligned.
@@ -24,97 +22,54 @@ I am broadly interested in understanding how language models adapt their behavio
 ## Selected Publications <span class="section-link">[(Full List)](/publications/)</span>
 
 <div class="selected-pub">
-
 <div class="selected-pub-title">
-
 Persona-Induced Information Asymmetry in Large Language Models
-
 </div>
-
 <div class="selected-pub-authors">
-
 <strong>Zhangfei Yang</strong>
-
 </div>
-
 <div class="selected-pub-venue">
-
 Under review at EMNLP 2026
-
 </div>
-
 </div>
 
 <div class="selected-pub">
-
 <div class="selected-pub-title">
-
 Internal Coherence Maximization under Decentralized Data
-
 </div>
-
 <div class="selected-pub-authors">
-
 <strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
-
 </div>
-
 <div class="selected-pub-venue">
-
 Submitted to the AAAI Fall Symposium Series, 2026
-
 </div>
-
 </div>
 
 <div class="selected-pub">
-
 <div class="selected-pub-title">
-
 Moral Foundations Reward Modeling for Pluriversal LLM Alignment
-
 </div>
-
 <div class="selected-pub-authors">
-
 <strong>Zhangfei Yang</strong>
-
 </div>
-
 <div class="selected-pub-venue">
-
 Submitted to the AAAI Fall Symposium Series, 2026
-
 </div>
-
 </div>
 
 <div class="selected-pub">
-
 <div class="selected-pub-title">
-
 OrbitStream: Training-Free Adaptive 360-degree Video Streaming via Semantic Potential Fields
-
 </div>
-
 <div class="selected-pub-authors">
-
 <strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
-
 </div>
-
 <div class="selected-pub-venue">
-
 ICCCN 2026
-
 </div>
-
 <div class="selected-pub-links">
-
 <a href="https://arxiv.org/abs/2603.20999" target="_blank" rel="noopener">arXiv</a>
-
 </div>
-
 </div>
 
 ## Research Experience
@@ -122,12 +77,12 @@ ICCCN 2026
 **Research Assistant, The George Washington University**  
 *Aug. 2026 – Present*
 
-Research on trustworthy large language models, including decentralized knowledge elicitation, federated model adaptation, and internal coherence maximization under heterogeneous data settings.
+Research on trustworthy large language models, with a focus on decentralized knowledge elicitation, federated model adaptation, and internal coherence maximization under heterogeneous data settings.
 
 ## Professional Service
 
 - Program Committee Member, **AAAI Fall Symposium 2026**, AT-AI4H-NW 2026
-- External Reviewer / Subreviewer, **AAAI/ACM Conference on AI, Ethics, and Society (AIES 2026)**
+- External Reviewer / Subreviewer, **AIES 2026**
 
 ## Education
 
