@@ -80,10 +80,10 @@ author:
 
 # Publication Category
 publication_category:
-  manuscripts:
-    title: "Manuscripts / Under Review"
   conferences:
-    title: "Conference Papers"
+    title: "Peer-Reviewed Papers"
+  manuscripts:
+    title: "Preprints / Under Review"
   symposiums:
     title: "Symposium Papers"
 
