@@ -5,32 +5,40 @@
 .page__footer {
   @include clearfix;
 
+  position: static !important;
   float: none;
   clear: both;
 
   width: 100%;
+  height: auto;
 
-  margin: 4rem 0 0;
+  margin: 3rem 0 0;
   padding: 0;
 
-  position: relative;
-  bottom: auto;
+  /* completely transparent footer */
+  background: transparent !important;
+  background-color: transparent !important;
 
-  background: transparent;
+  /* remove the gray bar / box */
+  border: 0 !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+
   color: var(--global-text-color-light);
 
-  border-top: 1px solid var(--global-border-color);
-
-  animation: none;
+  animation: none !important;
 
   footer {
     @include clearfix;
 
     max-width: $x-large;
-
     margin: 0 auto;
 
-    padding: 1.2rem 1rem 1.5rem;
+    padding: 0 1rem 1.5rem;
+
+    background: transparent !important;
+    border: 0;
+    box-shadow: none;
 
     font-family:
       "Inter",
@@ -44,30 +52,29 @@
 
   a {
     color: inherit;
-
     text-decoration: none;
 
     &:hover {
       text-decoration: underline;
-      text-underline-offset: 2px;
     }
-  }
-
-  .fas,
-  .fab,
-  .far,
-  .fal {
-    color: inherit;
   }
 }
 
 
-/*
-   Copyright
-   ========================================================================== */
+/* Hide follow / feed section completely */
+.page__footer-follow {
+  display: none !important;
+}
 
+
+/* Minimal copyright only */
 .page__footer-copyright {
   margin: 0;
+  padding: 0;
+
+  background: transparent !important;
+
+  color: var(--global-text-color-light);
 
   font-family:
     "Inter",
@@ -79,16 +86,6 @@
     sans-serif;
 
   font-size: 0.68rem;
+  font-weight: 400;
   line-height: 1.5;
-
-  color: var(--global-text-color-light);
-}
-
-
-/*
-   Follow links
-   ========================================================================== */
-
-.page__footer-follow {
-  display: none;
 }
