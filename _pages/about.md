@@ -131,8 +131,3 @@ Email: [yzf5140@gmail.com](mailto:yzf5140@gmail.com)
   font-size: 0.88em;
 }
 </style>
-
-.selected-pub-links a {
-  font-weight: 500;
-}
-</style>
