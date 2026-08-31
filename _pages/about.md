@@ -21,28 +21,101 @@ I am broadly interested in understanding how language models adapt their behavio
 - LLM alignment, model behavior, and evaluation
 - Knowledge elicitation and decentralized model adaptation
 
-## Selected Publications [(Full List)](/publications/)
+## Selected Publications <span class="section-link">[(Full List)](/publications/)</span>
 
-- **Zhangfei Yang.**  
-  **Persona-Induced Information Asymmetry in Large Language Models.**  
-  *Under review at EMNLP 2026.*
+<div class="selected-pub">
 
-- **Zhangfei Yang**, Aizierjiang Aiersilan.  
-  **Internal Coherence Maximization under Decentralized Data.**  
-  *Submitted to the AAAI Fall Symposium Series, 2026.*
+<div class="selected-pub-title">
 
-- **Zhangfei Yang.**  
-  **Moral Foundations Reward Modeling for Pluriversal LLM Alignment.**  
-  *Submitted to the AAAI Fall Symposium Series, 2026.*
+Persona-Induced Information Asymmetry in Large Language Models
 
-- **Zhangfei Yang**, Lintao Mei.  
-  **Metacognitive Alignment.**  
-  *Submitted to the AAAI Fall Symposium Series, 2026.*
+</div>
 
-- **Zhangfei Yang**, Aizierjiang Aiersilan.  
-  **OrbitStream: Training-Free Adaptive 360-degree Video Streaming via Semantic Potential Fields.**  
-  *Accepted to ICCCN 2026.*  
-  [[arXiv]](https://arxiv.org/abs/2603.20999)
+<div class="selected-pub-authors">
+
+<strong>Zhangfei Yang</strong>
+
+</div>
+
+<div class="selected-pub-venue">
+
+Under review at EMNLP 2026
+
+</div>
+
+</div>
+
+<div class="selected-pub">
+
+<div class="selected-pub-title">
+
+Internal Coherence Maximization under Decentralized Data
+
+</div>
+
+<div class="selected-pub-authors">
+
+<strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
+
+</div>
+
+<div class="selected-pub-venue">
+
+Submitted to the AAAI Fall Symposium Series, 2026
+
+</div>
+
+</div>
+
+<div class="selected-pub">
+
+<div class="selected-pub-title">
+
+Moral Foundations Reward Modeling for Pluriversal LLM Alignment
+
+</div>
+
+<div class="selected-pub-authors">
+
+<strong>Zhangfei Yang</strong>
+
+</div>
+
+<div class="selected-pub-venue">
+
+Submitted to the AAAI Fall Symposium Series, 2026
+
+</div>
+
+</div>
+
+<div class="selected-pub">
+
+<div class="selected-pub-title">
+
+OrbitStream: Training-Free Adaptive 360-degree Video Streaming via Semantic Potential Fields
+
+</div>
+
+<div class="selected-pub-authors">
+
+<strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
+
+</div>
+
+<div class="selected-pub-venue">
+
+ICCCN 2026
+
+</div>
+
+<div class="selected-pub-links">
+
+<a href="https://arxiv.org/abs/2603.20999" target="_blank" rel="noopener">arXiv</a>
+
+</div>
+
+</div>
 
 ## Research Experience
 
@@ -65,3 +138,37 @@ GPA: **4.0 / 4.0** · SEAS Achievement Scholarship
 ## Contact
 
 Email: [yzf5140@gmail.com](mailto:yzf5140@gmail.com)
+
+<style>
+.section-link {
+  font-size: 0.72em;
+  font-weight: 500;
+}
+
+.selected-pub {
+  margin: 1.15rem 0 1.45rem;
+}
+
+.selected-pub-title {
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 0.18rem;
+}
+
+.selected-pub-authors {
+  font-size: 0.92em;
+  line-height: 1.5;
+}
+
+.selected-pub-venue {
+  margin-top: 0.08rem;
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--global-text-color-light);
+}
+
+.selected-pub-links {
+  margin-top: 0.18rem;
+  font-size: 0.86em;
+}
+</style>
