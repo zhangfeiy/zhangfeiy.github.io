@@ -20,59 +20,80 @@ author_profile: true
 
 .pub-scholar {
   margin-bottom: 2.2rem;
-  color: #555;
+  color: var(--global-text-color);
+  opacity: 0.82;
 }
 
 .publication-section {
-  margin-top: 2.7rem;
+  margin-top: 2.8rem;
 }
 
 .publication-section h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.85rem;
   padding-bottom: 0.45rem;
-  border-bottom: 1px solid #e5e5e5;
-}
 
-.publication-entry {
-  padding: 1.15rem 0 1.25rem;
-  border-bottom: 1px solid #eeeeee;
-}
+  border-bottom: 1px solid var(--global-border-color);
 
-.publication-title {
-  margin-bottom: 0.35rem;
-  font-size: 1.04em;
-  line-height: 1.45;
+  color: var(--global-text-color);
   font-weight: 600;
 }
 
-.publication-title a {
-  text-decoration: none;
+/* 核心：每篇论文整体向右缩进 */
+.publication-entry {
+  margin-left: 1rem;
+  padding: 1.05rem 0 1.25rem 0;
+
+  border-bottom: 1px solid var(--global-border-color);
 }
 
-.publication-title a:hover {
-  text-decoration: underline;
+/* 论文标题 */
+.publication-title {
+  margin-bottom: 0.3rem;
+
+  color: var(--global-text-color);
+
+  font-size: 1.02em;
+  font-weight: 600;
+  line-height: 1.45;
 }
 
+/* 作者 */
 .publication-authors {
-  margin-bottom: 0.2rem;
-  line-height: 1.55;
+  margin-bottom: 0.16rem;
+
+  color: var(--global-text-color);
+
+  font-size: 0.94em;
+  line-height: 1.5;
 }
 
+/* venue/status 比作者稍浅，但不能像 disabled */
 .publication-venue {
-  color: #5a5a5a;
+  color: var(--global-text-color);
+  opacity: 0.76;
+
+  font-size: 0.92em;
   font-style: italic;
   line-height: 1.5;
 }
 
+/* 链接 */
 .publication-links {
-  margin-top: 0.28rem;
-  font-size: 0.92em;
+  margin-top: 0.32rem;
+
+  font-size: 0.88em;
 }
 
 .publication-links a {
-  margin-right: 0.7rem;
+  font-weight: 500;
 }
 
+/* 小屏不需要缩进这么多 */
+@media screen and (max-width: 768px) {
+  .publication-entry {
+    margin-left: 0.35rem;
+  }
+}
 </style>
 
 {% for category in site.publication_category %}
