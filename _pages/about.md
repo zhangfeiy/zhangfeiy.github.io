@@ -116,11 +116,8 @@ Email: [yzf5140@gmail.com](mailto:yzf5140@gmail.com)
 .selected-pub-venue {
   margin-top: 0.08rem;
   font-size: 0.9em;
-  font-style: italic;
-
-  /* 不要再用 global-text-color-light */
-  color: var(--global-text-color);
-  opacity: 0.78;
+  font-style: normal;
+  color: #5f6368;
 }
 
 .selected-pub-links {
