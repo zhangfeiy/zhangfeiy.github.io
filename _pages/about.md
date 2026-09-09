@@ -14,9 +14,9 @@ I am interested in understanding why language models and AI agents exhibit unrel
 > **I am applying to Ph.D. programs starting in Fall 2027.** I am particularly interested in LLM alignment, AI safety, trustworthy AI, and reliable agentic systems.
 ## Research Interests
 
-- Trustworthy and safe large language models
-- LLM alignment, model behavior, and evaluation
-- Knowledge elicitation and decentralized model adaptation
+- Large language model alignment and AI safety
+- Trustworthy and reliable AI systems
+- Model robustness, adaptation, and post-training
 
 ## Selected Publications <span class="section-link">[(Full List)](/publications/)</span>
 
@@ -65,9 +65,6 @@ Aizierjiang Aiersilan, <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
 ICCCN 2026
-</div>
-<div class="selected-pub-links">
-<a href="https://arxiv.org/abs/2603.20999" target="_blank" rel="noopener">arXiv</a>
 </div>
 </div>
 
