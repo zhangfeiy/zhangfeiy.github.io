@@ -64,7 +64,7 @@ Training-Free Adaptive 360° Video Streaming via Semantic Potential Fields
 Aizierjiang Aiersilan, <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
-ICCCN 2026
+Proceedings of 35th International Conference on Computer Communications and Networks (ICCCN 2026)
 </div>
 </div>
 
