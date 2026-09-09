@@ -7,12 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-I am an M.S. student in Computer Science at **The George Washington University**. My research focuses on **trustworthy artificial intelligence**, with particular interests in **large language model alignment, model behavior and evaluation, and reliable knowledge elicitation**.
+I am an M.S. student in Computer Science at **The George Washington University**. My research focuses on **large language model alignment and AI safety**, with broader interests in **trustworthy AI and reliable agentic systems**.
 
-I am broadly interested in understanding how language models adapt their behavior across different users, objectives, and deployment settings, and in developing methods that make these systems more reliable, interpretable, and aligned.
+I am interested in understanding why language models and AI agents exhibit unreliable or misaligned behavior, and in developing methods to improve their alignment, robustness, and reliability across different objectives and deployment settings.
 
-> **I am applying to Ph.D. programs starting in Fall 2027.** I am particularly interested in trustworthy AI, LLM alignment, model behavior and evaluation, and related problems in AI safety.
-
+> **I am applying to Ph.D. programs starting in Fall 2027.** I am particularly interested in LLM alignment, AI safety, trustworthy AI, and reliable agentic systems.
 ## Research Interests
 
 - Trustworthy and safe large language models
