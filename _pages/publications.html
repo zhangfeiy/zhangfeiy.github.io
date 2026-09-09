@@ -142,22 +142,6 @@ author_profile: true
             {{ post.venue }}
           </div>
 
-          {% if post.paperurl and post.paperurl != "" %}
-
-            <div class="publication-links">
-
-              <a
-                href="{{ post.paperurl }}"
-                target="_blank"
-                rel="noopener"
-              >
-                arXiv
-              </a>
-
-            </div>
-
-          {% endif %}
-
         </article>
 
       {% endfor %}
