@@ -59,10 +59,10 @@ Submitted to the AAAI Fall Symposium Series, 2026
 
 <div class="selected-pub">
 <div class="selected-pub-title">
-OrbitStream: Training-Free Adaptive 360-degree Video Streaming via Semantic Potential Fields
+Training-Free Adaptive 360° Video Streaming via Semantic Potential Fields
 </div>
 <div class="selected-pub-authors">
-<strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
+Aizierjiang Aiersilan, <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
 ICCCN 2026
