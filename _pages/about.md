@@ -80,7 +80,7 @@ Research on trustworthy large language models, with a focus on decentralized kno
 
 ## Professional Service
 
-- Program Committee Member, **AAAI Fall Symposium 2026**, AT-AI4H-NW 2026
+- Program Committee Member, **AAAI Fall Symposium 2026**
 - External Reviewer / Subreviewer, **AIES 2026**
 
 ## Education
