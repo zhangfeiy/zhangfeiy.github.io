@@ -4,6 +4,7 @@ collection: publications
 category: symposiums
 permalink: /publication/2026-delegates-trustees
 date: 2026-09-02
+order: 8
 venue: "Submitted to the AAAI Fall Symposium Series, 2026"
 authors: "<strong>Zhangfei Yang</strong>"
 paperurl: ""
