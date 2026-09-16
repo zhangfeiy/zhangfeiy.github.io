@@ -4,7 +4,8 @@ collection: publications
 category: symposiums
 permalink: /publication/2026-human-oversight
 date: 2026-08-01
-venue: "Submitted to the AAAI Fall Symposium Series, 2026"
+order: 3
+venue: "Accepted to the AAAI 2026 Fall Symposium on Agentic and Trustworthy AI for Health and the Global AI-Ready Nursing Workforce (AT-AI4H-NW 2026)"
 authors: "<strong>Zhangfei Yang</strong>, Yuheng Zhao, Zhentao Fan"
 paperurl: ""
 ---
