@@ -28,7 +28,7 @@ Persona-Induced Information Asymmetry in Large Language Models
 <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
-Under review at EMNLP 2026
+Manuscript preparing for the next ACL ARR cycle
 </div>
 </div>
 
@@ -40,7 +40,7 @@ Internal Coherence Maximization under Decentralized Data
 <strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
 </div>
 <div class="selected-pub-venue">
-Submitted to the AAAI Fall Symposium Series, 2026
+Accepted to the AAAI 2026 Fall Symposium on Trustworthy Agentic Systems (TAS 2026)
 </div>
 </div>
 
@@ -52,7 +52,7 @@ Moral Foundations Reward Modeling for Pluriversal LLM Alignment
 <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
-Submitted to the AAAI Fall Symposium Series, 2026
+Accepted to the AAAI 2026 Fall Symposium “Aligning with Whom? Pluriversal and Paraconsistent Frameworks for Value Alignment in AI Systems”
 </div>
 </div>
 
@@ -64,7 +64,19 @@ Training-Free Adaptive 360° Video Streaming via Semantic Potential Fields
 Aizierjiang Aiersilan, <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
-Proceedings of 35th International Conference on Computer Communications and Networks (ICCCN 2026)
+Proceedings of the 35th International Conference on Computer Communications and Networks (ICCCN 2026)
+</div>
+</div>
+
+<div class="selected-pub">
+<div class="selected-pub-title">
+The Variance Problem in Human Oversight of Clinical AI: Measuring Four Safeguards Across Nine Reviewers on a Nurse-Facing Deterioration Testbed
+</div>
+<div class="selected-pub-authors">
+<strong>Zhangfei Yang</strong>, Yuheng Zhao, Zhentao Fan
+</div>
+<div class="selected-pub-venue">
+Accepted to the AAAI 2026 Fall Symposium on Agentic and Trustworthy AI for Health and the Global AI-Ready Nursing Workforce (AT-AI4H-NW 2026)
 </div>
 </div>
 
