@@ -4,6 +4,7 @@ collection: publications
 category: symposiums
 permalink: /publication/2026-planetary-boundaries
 date: 2026-08-01
+order: 7
 venue: "Submitted to the AAAI Fall Symposium Series, 2026"
 authors: "<strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan"
 paperurl: ""
