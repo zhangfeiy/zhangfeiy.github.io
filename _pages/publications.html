@@ -24,21 +24,11 @@ author_profile: true
   opacity: 0.82;
 }
 
-.publication-section {
-  margin-top: 2.8rem;
+.publication-list {
+  margin-top: 1.8rem;
 }
 
-.publication-section h2 {
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.45rem;
-
-  border-bottom: 1px solid var(--global-border-color);
-
-  color: var(--global-text-color);
-  font-weight: 600;
-}
-
-/* 核心：每篇论文整体向右缩进 */
+/* 每篇论文整体向右缩进 */
 .publication-entry {
   margin-left: 1rem;
   padding: 1.05rem 0 1.25rem 0;
@@ -67,7 +57,7 @@ author_profile: true
   line-height: 1.5;
 }
 
-/* venue/status 比作者稍浅，但不能像 disabled */
+/* venue / status */
 .publication-venue {
   color: var(--global-text-color);
   opacity: 0.76;
@@ -77,77 +67,56 @@ author_profile: true
   line-height: 1.5;
 }
 
-/* 链接 */
-.publication-links {
-  margin-top: 0.32rem;
-
-  font-size: 0.88em;
-}
-
-.publication-links a {
-  font-weight: 500;
-}
-
-/* 小屏不需要缩进这么多 */
+/* 小屏缩进 */
 @media screen and (max-width: 768px) {
   .publication-entry {
     margin-left: 0.35rem;
   }
 }
+
 </style>
 
-{% for category in site.publication_category %}
+{% assign publications = site.publications
+  | sort: "date"
+  | reverse
+%}
 
-  {% assign category_posts = site.publications
-    | where: "category", category[0]
-    | sort: "date"
-    | reverse
-  %}
+<section class="publication-list">
 
-  {% if category_posts.size > 0 %}
+{% for post in publications %}
 
-    <section class="publication-section">
+  <article class="publication-entry">
 
-      <h2>{{ category[1].title }}</h2>
+    <div class="publication-title">
 
-      {% for post in category_posts %}
+      {% if post.paperurl and post.paperurl != "" %}
 
-        <article class="publication-entry">
+        <a
+          href="{{ post.paperurl }}"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ post.title }}
+        </a>
 
-          <div class="publication-title">
+      {% else %}
 
-            {% if post.paperurl and post.paperurl != "" %}
+        {{ post.title }}
 
-              <a
-                href="{{ post.paperurl }}"
-                target="_blank"
-                rel="noopener"
-              >
-                {{ post.title }}
-              </a>
+      {% endif %}
 
-            {% else %}
+    </div>
 
-              {{ post.title }}
+    <div class="publication-authors">
+      {{ post.authors }}
+    </div>
 
-            {% endif %}
+    <div class="publication-venue">
+      {{ post.venue }}
+    </div>
 
-          </div>
-
-          <div class="publication-authors">
-            {{ post.authors }}
-          </div>
-
-          <div class="publication-venue">
-            {{ post.venue }}
-          </div>
-
-        </article>
-
-      {% endfor %}
-
-    </section>
-
-  {% endif %}
+  </article>
 
 {% endfor %}
+
+</section>
