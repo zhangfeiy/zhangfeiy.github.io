@@ -5,7 +5,7 @@ category: symposiums
 permalink: /publication/2026-planetary-boundaries
 date: 2026-08-01
 order: 7
-venue: "Submitted to the AAAI Fall Symposium Series, 2026"
+venue: "Accepted to the AAAI 2026 Fall Symposium on Planning for a Better Planet"
 authors: "<strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan"
 paperurl: ""
 ---
