@@ -36,13 +36,16 @@ Manuscript preparing for submission to ACL Rolling Review (ARR)
 
 <div class="selected-pub">
 <div class="selected-pub-title">
-Internal Coherence Maximization under Decentralized Data
+Internal Coherence Maximization Under Decentralized Data
 </div>
 <div class="selected-pub-authors">
 <strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
 </div>
 <div class="selected-pub-venue">
-Accepted to the AAAI 2026 Fall Symposium on Trustworthy Agentic Systems (TAS 2026) · Oral presentation (presenter)
+Proceedings of the AAAI Symposium Series, 10(1), 1132–1139 (2026) · Trustworthy Agentic Systems (TAS 2026) · Oral presentation (presenter)
+</div>
+<div class="selected-pub-links">
+<a href="https://doi.org/10.1609/aaaiss.v10i1.43536">DOI</a>
 </div>
 </div>
 
@@ -54,7 +57,10 @@ Moral Foundations Reward Modeling for Pluriversal LLM Alignment
 <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
-Accepted to the AAAI 2026 Fall Symposium “Aligning with Whom? Pluriversal and Paraconsistent Frameworks for Value Alignment in AI Systems” · Oral presentation (presenter)
+Proceedings of the AAAI Symposium Series, 10(1), 48–55 (2026) · Aligning with Whom? Pluriversal and Paraconsistent Frameworks for Value Alignment in AI Systems · Oral presentation (presenter)
+</div>
+<div class="selected-pub-links">
+<a href="https://doi.org/10.1609/aaaiss.v10i1.43390">DOI</a>
 </div>
 </div>
 
@@ -78,7 +84,10 @@ The Variance Problem in Human Oversight of Clinical AI: Measuring Four Safeguard
 <strong>Zhangfei Yang</strong>, Yuheng Zhao, Zhentao Fan
 </div>
 <div class="selected-pub-venue">
-Accepted to the AAAI 2026 Fall Symposium on Agentic and Trustworthy AI for Health and the Global AI-Ready Nursing Workforce (AT-AI4H-NW 2026)
+Proceedings of the AAAI Symposium Series, 10(1), 1281–1288 (2026) · Agentic and Trustworthy AI for Health and the Global AI-Ready Nursing Workforce (AT-AI4H-NW 2026)
+</div>
+<div class="selected-pub-links">
+<a href="https://doi.org/10.1609/aaaiss.v10i1.43557">DOI</a>
 </div>
 </div>
 
@@ -90,7 +99,10 @@ Reinforcement Learning from Ecological Feedback (RLEF): A Framework for Aligning
 <strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
 </div>
 <div class="selected-pub-venue">
-Accepted to the AAAI 2026 Fall Symposium on Planning for a Better Planet · Oral presentation (presenter)
+Proceedings of the AAAI Symposium Series, 10(1), 566–574 (2026) · Planning for a Better Planet · Oral presentation (presenter)
+</div>
+<div class="selected-pub-links">
+<a href="https://doi.org/10.1609/aaaiss.v10i1.43457">DOI</a>
 </div>
 </div>
 
