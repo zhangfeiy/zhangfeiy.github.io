@@ -5,7 +5,7 @@ category: symposiums
 permalink: /publication/2026-delegates-trustees
 date: 2026-09-02
 order: 6
-venue: "Accepted to the AAAI 2026 Fall Symposium on Planning for a Better Planet"
+venue: "Proceedings of the AAAI Symposium Series, 10(1), 557–565 (2026) · Planning for a Better Planet · Oral presentation (presenter)"
 authors: "<strong>Zhangfei Yang</strong>"
-paperurl: ""
+paperurl: "https://doi.org/10.1609/aaaiss.v10i1.43456"
 ---
