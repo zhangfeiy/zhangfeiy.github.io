@@ -7,16 +7,18 @@ redirect_from:
   - /about.html
 ---
 
-I am an M.S. student in Computer Science at **The George Washington University**. My research focuses on **large language model alignment and AI safety**, with broader interests in **trustworthy AI and reliable agentic systems**.
+I am an M.S. student in Computer Science at **The George Washington University**. My research focuses on **large language model alignment, model behavior and evaluation, trustworthy AI, and AI safety**.
 
-I am interested in understanding why language models and AI agents exhibit unreliable or misaligned behavior, and in developing methods to improve their alignment, robustness, and reliability across different objectives and deployment settings.
+My current work examines specification gaming and reward seeking in language models, and how to evaluate evidence grounding in medical question answering.
 
-> **I am applying to Ph.D. programs starting in Fall 2027.** I am particularly interested in LLM alignment, AI safety, trustworthy AI, and reliable agentic systems.
+> **I am applying to Ph.D. programs starting in Fall 2027.**
+
 ## Research Interests
 
-- Large language model alignment and AI safety
-- Trustworthy and reliable AI systems
-- Model robustness, adaptation, and post-training
+- Trustworthy AI
+- Large language model alignment
+- Model behavior and evaluation
+- AI safety
 
 ## Selected Publications <span class="section-link">[(Full List)](/publications/)</span>
 
@@ -28,7 +30,7 @@ Persona-Induced Information Asymmetry in Large Language Models
 <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
-Manuscript preparing for the next ACL ARR cycle
+Manuscript preparing for submission to ACL Rolling Review (ARR)
 </div>
 </div>
 
@@ -40,7 +42,7 @@ Internal Coherence Maximization under Decentralized Data
 <strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
 </div>
 <div class="selected-pub-venue">
-Accepted to the AAAI 2026 Fall Symposium on Trustworthy Agentic Systems (TAS 2026)
+Accepted to the AAAI 2026 Fall Symposium on Trustworthy Agentic Systems (TAS 2026) · Oral presentation (presenter)
 </div>
 </div>
 
@@ -52,7 +54,7 @@ Moral Foundations Reward Modeling for Pluriversal LLM Alignment
 <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
-Accepted to the AAAI 2026 Fall Symposium “Aligning with Whom? Pluriversal and Paraconsistent Frameworks for Value Alignment in AI Systems”
+Accepted to the AAAI 2026 Fall Symposium “Aligning with Whom? Pluriversal and Paraconsistent Frameworks for Value Alignment in AI Systems” · Oral presentation (presenter)
 </div>
 </div>
 
@@ -64,7 +66,7 @@ Training-Free Adaptive 360° Video Streaming via Semantic Potential Fields
 Aizierjiang Aiersilan, <strong>Zhangfei Yang</strong>
 </div>
 <div class="selected-pub-venue">
-Proceedings of the 35th International Conference on Computer Communications and Networks (ICCCN 2026)
+Proceedings of the 35th International Conference on Computer Communications and Networks (ICCCN), 2026
 </div>
 </div>
 
@@ -80,12 +82,31 @@ Accepted to the AAAI 2026 Fall Symposium on Agentic and Trustworthy AI for Healt
 </div>
 </div>
 
+<div class="selected-pub">
+<div class="selected-pub-title">
+Reinforcement Learning from Ecological Feedback (RLEF): A Framework for Aligning Language-Model Planning with Planetary Boundaries
+</div>
+<div class="selected-pub-authors">
+<strong>Zhangfei Yang</strong>, Aizierjiang Aiersilan
+</div>
+<div class="selected-pub-venue">
+Accepted to the AAAI 2026 Fall Symposium on Planning for a Better Planet · Oral presentation (presenter)
+</div>
+</div>
+
 ## Research Experience
 
 **Research Assistant, The George Washington University**  
-*Aug. 2026 – Present*
+*Aug. 2026 – Present*  
+Advisor: Prof. Shi Feng
 
-Research on trustworthy large language models, with a focus on decentralized knowledge elicitation, federated model adaptation, and internal coherence maximization under heterogeneous data settings.
+I review studies on LLM specification gaming and reward seeking, focusing on monitoring cues that can also act as instructions.
+
+**AiChatbox — Evidence Grounding in Medical Question Answering**  
+*Oct. 2026 – Present*  
+Research collaboration with Yi Zhu. Evaluation questions from Meghna Shukla (Wayne State University College of Nursing).
+
+I developed a retrieval-augmented question-answering system for sickle cell disease education and designed a claim-level evaluation to test whether cited passages support treatment claims and whether the answers preserve qualifications that affect care guidance.
 
 ## Professional Service
 
@@ -97,6 +118,10 @@ Research on trustworthy large language models, with a focus on decentralized kno
 **The George Washington University**  
 M.S. in Computer Science, Sep. 2025 – Expected May 2027  
 GPA: **4.0 / 4.0** · SEAS Achievement Scholarship
+
+**Zhongnan University of Economics and Law**  
+B.S. in Information Systems, 2019–2023  
+GPA: **3.28 / 4.0** · National Scholarship
 
 ## Contact
 
