@@ -61,6 +61,7 @@ Proceedings of the AAAI Symposium Series, 10(1), 48–55 (2026) · Aligning with
 <div class="selected-pub">
 <div class="selected-pub-title">
 <a href="https://arxiv.org/abs/2603.20999">Training-Free Adaptive 360° Video Streaming via Semantic Potential Fields</a>
+</div>
 <div class="selected-pub-authors">
 Aizierjiang Aiersilan, <strong>Zhangfei Yang</strong>
 </div>
