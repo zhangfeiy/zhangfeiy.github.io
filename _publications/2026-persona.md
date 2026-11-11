@@ -5,7 +5,7 @@ category: manuscripts
 permalink: /publication/2026-persona
 date: 2026-08-01
 order: 7
-venue: "Manuscript preparing for the next ACL ARR cycle"
+venue: "Manuscript preparing for submission to ACL Rolling Review (ARR)"
 authors: "<strong>Zhangfei Yang</strong>"
 paperurl: ""
 ---
